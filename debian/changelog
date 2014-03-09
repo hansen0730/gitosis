@@ -1,0 +1,71 @@
+gitosis (1:0.2-ossxp.6) unstable; urgency=low
+
+  * Change right flag 'init' to 'admin' and update the document.
+
+ -- Jiang Xin <jiangxin@ossxp.com>  Tue, 20 Jul 2010 18:47:52 +0800
+
+gitosis (1:0.2-ossxp.5) unstable; urgency=low
+
+  * When initialize a repos, not update gitweb and gitdaemon for
+    others but only this repos.
+  * Check map option even if matched user/path/operation found
+    in group.
+  * mapping's option value can be regex pattern and replacement
+    split by column ':'
+  * Restructure: acl keywords synonyms check.
+  * Allow repository path in UTF-8.
+
+ -- Jiang Xin <jiangxin@ossxp.com>  Tue, 20 Jul 2010 17:17:52 +0800
+
+gitosis (1:0.2-ossxp.4) unstable; urgency=low
+
+  * When admin clone a non-exist repository, do not create it 
+    on-the-fly. Only initial repository when admin push data
+    to non-exist repository.
+
+ -- Jiang Xin <jiangxin@ossxp.com>  Mon, 19 Jul 2010 20:23:58 +0800
+
+gitosis (1:0.2-ossxp.3) unstable; urgency=low
+
+  * Change version number to override debian gitosis package.
+
+ -- Jiang Xin <jiangxin@ossxp.com>  Wed, 16 Dec 2009 13:39:09 +0800
+
+gitosis (0.2-ossxp.2) unstable; urgency=low
+
+  * Add new auth rule: init. Users only with init permission can
+    create repositories.
+
+ -- Jiang Xin <jiangxin@ossxp.com>  Wed, 16 Dec 2009 13:39:09 +0800
+
+gitosis (0.2-ossxp.1) unstable; urgency=low
+
+  * With OSSXP Enhancement
+    - Repos match using wildcard characters, such as *, **
+    - Mapping can using wildcard and macro such as \1
+
+ -- Jiang Xin <jiangxin@ossxp.com>  Wed, 16 Dec 2009 09:29:46 +0800
+
+gitosis (0.2) unstable; urgency=low
+
+  * Fix initial push syntax in README. Needs to say "refs/heads/".
+  * Clean up more files in debian/rules.
+  * Mark the generated egg as non-zip-safe.
+  * Ensure "git init" doesn't write to stdout, and confuse a push.
+    The repository autocreation functionality ends up sending the
+    stdout to the client side, and there a very confused git push
+    can't make any sense of the protocol.
+  * Adjust README to make adduser create the home directory.
+  * Avoid missing configuration file trouble on initial run
+    of gitosis-init (and hence, gitosis-run-hook).
+  * Allow using email address in SSH public key user fields.
+  * Make sure ~git/.ssh exists in gitosis-init.
+
+ -- Tommi Virtanen <tv@debian.org>  Mon,  3 Sep 2007 23:28:23 -0700
+
+gitosis (0.1) unstable; urgency=low
+
+  * Initial Release.
+
+ -- Tommi Virtanen <tv@debian.org>  Mon,  4 Jun 2007 12:49:11 +0300
+
